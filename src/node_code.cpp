@@ -34,9 +34,9 @@ void desCallback(const geometry_msgs::Twist::ConstPtr& des_msg)
 void lidarCallback (const sensor_msgs::LaserScan msg)
 {
   hitWall = false;
-  for (int indx = 45; indx < 225; indx++) 
+  for (int index = 45; index < 225; index++) 
   {
-    if (lase.ranges[indx] < wall_dist)
+    if (msg.ranges[index] < wall_dist)
     {
       hitWall = true;
       break;
